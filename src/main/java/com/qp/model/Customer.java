@@ -5,32 +5,25 @@ import com.qp.CustomerTypeEnum;
 public class Customer {
     private String name;
     private CustomerTypeEnum type; // "Regular", "Premium", "VIP"
-    private double discount;
 
     public Customer(String name, CustomerTypeEnum type) {
         this.name = name;
         this.type = type;
-
     }
 
     public String getName() {
         return name;
     }
 
-
     public double getDiscount() {
-        switch (type) {
-            case REGULAR:
-                discount = CustomerTypeEnum.REGULAR.getDiscount();
-                break;
-            case PREMIUM:
-                discount = CustomerTypeEnum.PREMIUM.getDiscount();
-                break;
-            case VIP:
-                discount = CustomerTypeEnum.VIP.getDiscount();
-                break;
+        double discount = 0;
+        if (type == CustomerTypeEnum.REGULAR) {
+            discount = CustomerTypeEnum.REGULAR.getDiscount();
+        } else if (type == CustomerTypeEnum.PREMIUM) {
+            discount = CustomerTypeEnum.PREMIUM.getDiscount();
+        } else if (type == CustomerTypeEnum.VIP) {
+            discount = CustomerTypeEnum.VIP.getDiscount();
         }
-
         return discount;
     }
 }
