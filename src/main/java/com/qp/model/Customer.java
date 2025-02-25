@@ -3,8 +3,8 @@ package com.qp.model;
 import com.qp.CustomerTypeEnum;
 
 public class Customer {
-    private String name;
-    private CustomerTypeEnum type; // "Regular", "Premium", "VIP"
+    private final String name;
+    private final CustomerTypeEnum type; // "Regular", "Premium", "VIP"
 
     public Customer(String name, CustomerTypeEnum type) {
         this.name = name;

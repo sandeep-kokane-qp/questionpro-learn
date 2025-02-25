@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Order {
-    private Customer customer;
-    private List<String> items;
-    private List<Double> prices;
+    private final Customer customer;
+    private final List<String> items;
+    private final List<Double> prices;
 
     public Order(Customer customer) {
         this.customer = customer;
@@ -40,10 +40,6 @@ public class Order {
 
     public Customer getCustomer() {
         return customer;
-    }
-
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
     }
 
     public List<String> getItems() {
