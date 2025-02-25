@@ -18,8 +18,9 @@ public class OrderManagementSystem {
     private static void generateInvoice(Order order) {
         System.out.println("Generating Invoice...");
         System.out.println("Customer: " + order.getCustomer().getName());
-        System.out.println("Total: $" + order.calculateTotal());
-        System.out.println("Discounted Total: $" + order.calculateTotal());
+        double discountApplied = order.calculateTotal();
+        System.out.println("Total: $" + discountApplied);
+        System.out.println("Discounted Total: $" + order.applyDiscount(discountApplied));
         System.out.println("Items: " + order.getItems());
         System.out.println("Thank you for shopping with us!");
     }
