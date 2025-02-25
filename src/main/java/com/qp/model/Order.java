@@ -34,8 +34,9 @@ public class Order {
     public void printOrder() {
         System.out.println("Customer: " + customer.getName());
         System.out.println("Items: " + items);
-        System.out.println("Total Price: " + calculateTotal());
-        System.out.println("Discounted Price: " + applyDiscount(calculateTotal()));
+        double totalAmount = calculateTotal();
+        System.out.println("Total Price: " + totalAmount);
+        System.out.println("Discounted Price: " + applyDiscount(totalAmount));
     }
 
     public Customer getCustomer() {

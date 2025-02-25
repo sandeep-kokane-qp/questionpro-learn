@@ -4,7 +4,7 @@ import com.qp.CustomerTypeEnum;
 
 public class Customer {
     private final String name;
-    private final CustomerTypeEnum type; // "Regular", "Premium", "VIP"
+    private final CustomerTypeEnum type;
 
     public Customer(String name, CustomerTypeEnum type) {
         this.name = name;
