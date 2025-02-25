@@ -8,8 +8,6 @@ public class Order {
     private List<String> items;
     private List<Double> prices;
 
-    private double discountedPrice;
-
     public Order(Customer customer) {
         this.customer = customer;
         this.items = new ArrayList<>();
@@ -50,25 +48,5 @@ public class Order {
 
     public List<String> getItems() {
         return items;
-    }
-
-    public void setItems(List<String> items) {
-        this.items = items;
-    }
-
-    public List<Double> getPrices() {
-        return prices;
-    }
-
-    public void setPrices(List<Double> prices) {
-        this.prices = prices;
-    }
-
-    public double getDiscountedPrice() {
-        return discountedPrice;
-    }
-
-    public void setDiscountedPrice(double discountedPrice) {
-        this.discountedPrice = discountedPrice;
     }
 }
