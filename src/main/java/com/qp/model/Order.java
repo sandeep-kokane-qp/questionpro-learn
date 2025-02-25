@@ -7,7 +7,7 @@ public class Order {
     private Customer customer;
     private List<String> items;
     private List<Double> prices;
-    private double totalPrice;
+
     private double discountedPrice;
 
     public Order(Customer customer) {
@@ -21,24 +21,23 @@ public class Order {
         prices.add(price);
     }
 
-    public void calculateTotal() {
-        totalPrice = 0;
+    public double calculateTotal() {
+        double totalPrice = 0;
         for (double price : prices) {
             totalPrice += price;
         }
-        applyDiscount();
+        return totalPrice;
     }
 
-    public void applyDiscount() {
-        discountedPrice = totalPrice - (totalPrice * customer.getDiscount());
+    public double applyDiscount(double totalPrice) {
+        return totalPrice - (totalPrice * customer.getDiscount());
     }
 
     public void printOrder() {
-        calculateTotal();
         System.out.println("Customer: " + customer.getName());
         System.out.println("Items: " + items);
-        System.out.println("Total Price: " + totalPrice);
-        System.out.println("Discounted Price: " + discountedPrice);
+        System.out.println("Total Price: " + calculateTotal());
+        System.out.println("Discounted Price: " + applyDiscount(calculateTotal()));
     }
 
     public Customer getCustomer() {
@@ -63,14 +62,6 @@ public class Order {
 
     public void setPrices(List<Double> prices) {
         this.prices = prices;
-    }
-
-    public double getTotalPrice() {
-        return totalPrice;
-    }
-
-    public void setTotalPrice(double totalPrice) {
-        this.totalPrice = totalPrice;
     }
 
     public double getDiscountedPrice() {
